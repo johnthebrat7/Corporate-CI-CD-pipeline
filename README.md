@@ -2,14 +2,21 @@
 This repository demonstrates an end-to-end, production-ready DevSecOps pipeline for a Sentiment Analysis Web Application. The project leverages a Multibranch Pipeline strategy for Continuous Integration and a GitOps approach for Continuous Deployment, ensuring high availability, scalability, and security.
 
 🏗️ Architecture Overview
+
 The pipeline is split into two core components:
 
 Continuous Integration (CI): Managed by Jenkins (Multibranch) to handle automated testing, building, and pushing of Docker images.
-
 Continuous Deployment (CD): Managed by ArgoCD (GitOps) to synchronize the Kubernetes state with the manifest repository.
 
 🛠️ Technology Stack
 
+Backend	Python : Flask (Sentiment Analysis Logic)
+CI Engine	: Jenkins (Multibranch Pipeline)
+CD Engine	: ArgoCD (GitOps Controller)
+Containerization	: Docker, Docker Hub
+Orchestration	: Amazon EKS (Kubernetes)
+Infrastructure	: AWS, eksctl
+Observability	: Prometheus, Grafana
 
 🔄 The Workflow
 1. Developer Workflow (Branching Strategy)
