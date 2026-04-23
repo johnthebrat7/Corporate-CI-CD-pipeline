@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="hero-section">
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    
+    <div class="card result-card">
+        <div class="card-header">
+            <div class="card-icon result-icon">📊</div>
+            <h3>Prediction Result</h3>
+            <p class="card-subtitle">Analyzed via XGBoost Engine</p>
+        </div>
+        
+        <div class="result-content">
+            <div class="result-item input-display">
+                <div class="result-label">
+                    <span class="label-icon">📝</span>
+                    <span>Your Input</span>
+                </div>
+                <div class="result-value input-text">
+                    "{{ text }}"
+                </div>
+            </div>
+            
+            <div class="result-item sentiment-display">
+                <div class="result-label">
+                    <span class="label-icon">🎭</span>
+                    <span>Sentiment</span>
+                </div>
+                
+                {% if prediction == 'Positive' %}
+                    <div class="result-value sentiment-badge positive">
+                        😊 Positive
+                    </div>
+                {% elif prediction == 'Negative' %}
+                    <div class="result-value sentiment-badge negative">
+                        😔 Negative
+                    </div>
+                {% else %}
+                    <div class="result-value sentiment-badge neutral">
+                        😐 {{ prediction }}
+                    </div>
+                {% endif %}
+            </div>
+            
+            <div class="result-item confidence-display">
+                <div class="result-label">
+                    <span class="label-icon">📈</span>
+                    <span>Confidence Score</span>
+                </div>
+                <div class="confidence-wrapper">
+                    <div class="confidence-bar">
+                        <div class="confidence-fill" style="width: {{ confidence }}%;"></div>
+                    </div>
+                    <span class="confidence-value">{{ confidence }}%</span>
+                </div>
+            </div>
+
+            <div style="margin-top: 15px; font-size: 0.8rem; color: #888; text-align: center;">
+                Processed using: <strong>XGBoost Classifier</strong>
+            </div>
+        </div>
+        
+        <a href="{{ url_for('home') }}" class="btn try-again-btn">
+            <span class="btn-text">🔄 Try Another</span>
+            <span class="btn-hover-text">New Analysis! ✨</span>
+        </a>
+    </div>
+</div>
+
+{% endblock %}

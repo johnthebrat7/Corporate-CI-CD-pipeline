@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sentiment-app
+  namespace: default
+  labels:
+    app: sentiment-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sentiment-app
+  template:
+    metadata:
+      labels:
+        app: sentiment-app
+    spec:
+      containers:
+      - name: sentiment-app
+        image: rajrishidockerhub/sentiment-app:build-1
+        ports:
+        - containerPort: 5000
+        env:
+        - name: DEBUG
+          value: "False"
+        - name: SECRET_KEY
+          value: "change-this-in-production"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "200m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 5000
+          initialDelaySeconds: 10
+          periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 5000
+          initialDelaySeconds: 30
+          periodSeconds: 15
