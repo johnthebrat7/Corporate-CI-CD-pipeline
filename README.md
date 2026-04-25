@@ -170,3 +170,7 @@ Final Year Engineering Project
 ---
 
 ⭐ If you found this useful, consider giving it a star!
+
+Demo
+<img width="940" height="468" alt="image" src="https://github.com/user-attachments/assets/274840c7-020e-4f9c-a1b7-aa649c5f1b8b" />
+
