@@ -3,25 +3,25 @@
    ============================================ */
 :root {
     /* Primary Gradient Colors */
-    --gradient-1: #667eea;
-    --gradient-2: #764ba2;
-    --gradient-3: #f093fb;
-    --gradient-4: #f5576c;
-    --gradient-5: #4facfe;
-    --gradient-6: #00f2fe;
+    --gradient-1: #4f46e5;
+    --gradient-2: #9333ea;
+    --gradient-3: #d946ef;
+    --gradient-4: #f43f5e;
+    --gradient-5: #0ea5e9;
+    --gradient-6: #06b6d4;
     
     /* Accent Colors */
-    --accent-purple: #8b5cf6;
-    --accent-pink: #ec4899;
-    --accent-cyan: #06b6d4;
-    --accent-orange: #f97316;
-    --accent-green: #10b981;
-    --accent-yellow: #fbbf24;
-    --accent-red: #ef4444;
+    --accent-purple: #a855f7;
+    --accent-pink: #f472b6;
+    --accent-cyan: #22d3ee;
+    --accent-orange: #fb923c;
+    --accent-green: #34d399;
+    --accent-yellow: #fcd34d;
+    --accent-red: #f87171;
     
     /* Background Colors */
-    --bg-dark: #0f0f23;
-    --bg-darker: #070714;
+    --bg-dark: #1e1e2f;
+    --bg-darker: #13131f;
     --bg-card: rgba(255, 255, 255, 0.08);
     --bg-card-hover: rgba(255, 255, 255, 0.12);
     
@@ -33,7 +33,7 @@
     /* Effects */
     --glass-bg: rgba(255, 255, 255, 0.1);
     --glass-border: rgba(255, 255, 255, 0.2);
-    --shadow-glow: 0 0 40px rgba(139, 92, 246, 0.3);
+    --shadow-glow: 0 0 40px rgba(168, 85, 247, 0.3);
     
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -193,8 +193,8 @@ nav {
     border-color: transparent;
     transform: translateY(-3px) scale(1.05);
     box-shadow: 
-        0 10px 30px rgba(139, 92, 246, 0.4),
-        0 0 20px rgba(236, 72, 153, 0.3);
+        0 10px 30px rgba(168, 85, 247, 0.4),
+        0 0 20px rgba(244, 114, 182, 0.3);
 }
 
 .nav-link:active {
@@ -240,25 +240,25 @@ nav {
 }
 
 .alert-error {
-    background: rgba(239, 68, 68, 0.2);
+    background: rgba(248, 113, 113, 0.2);
     border: 1px solid var(--accent-red);
     color: #fca5a5;
 }
 
 .alert-warning {
-    background: rgba(251, 191, 36, 0.2);
+    background: rgba(252, 211, 77, 0.2);
     border: 1px solid var(--accent-yellow);
     color: #fde68a;
 }
 
 .alert-success {
-    background: rgba(16, 185, 129, 0.2);
+    background: rgba(52, 211, 153, 0.2);
     border: 1px solid var(--accent-green);
     color: #6ee7b7;
 }
 
 .alert-info {
-    background: rgba(6, 182, 212, 0.2);
+    background: rgba(34, 211, 238, 0.2);
     border: 1px solid var(--accent-cyan);
     color: #67e8f9;
 }
@@ -405,7 +405,7 @@ main {
     transform: translateY(-5px);
     box-shadow: 
         0 35px 60px rgba(0, 0, 0, 0.4),
-        0 0 50px rgba(139, 92, 246, 0.4);
+        0 0 50px rgba(168, 85, 247, 0.4);
     border-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -477,8 +477,8 @@ textarea:focus {
     outline: none;
     border-color: var(--accent-purple);
     box-shadow: 
-        0 0 20px rgba(139, 92, 246, 0.3),
-        inset 0 0 20px rgba(139, 92, 246, 0.1);
+        0 0 20px rgba(168, 85, 247, 0.3),
+        inset 0 0 20px rgba(168, 85, 247, 0.1);
 }
 
 /* ============================================
@@ -532,8 +532,8 @@ textarea:focus {
     background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
     transform: translateY(-5px) scale(1.05);
     box-shadow: 
-        0 20px 40px rgba(6, 182, 212, 0.4),
-        0 0 30px rgba(16, 185, 129, 0.3);
+        0 20px 40px rgba(34, 211, 238, 0.4),
+        0 0 30px rgba(52, 211, 153, 0.3);
 }
 
 .analyze-btn:active,
@@ -579,7 +579,6 @@ textarea:focus {
     word-wrap: break-word;
 }
 
-/* Sentiment Badges */
 /* ============================================
    SENTIMENT BADGES - ENHANCED VIBRANCY
    ============================================ */
@@ -596,13 +595,13 @@ textarea:focus {
 }
 
 .sentiment-badge.positive {
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    background: linear-gradient(135deg, #34d399 0%, #059669 100%);
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: white;
 }
 
 .sentiment-badge.negative {
-    background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+    background: linear-gradient(135deg, #f87171 0%, #b91c1c 100%);
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: white;
 }
@@ -612,7 +611,7 @@ textarea:focus {
    ============================================ */
 .confidence-wrapper {
     display: flex;
-    flex-direction: column; /* Changed to column for better mobile look */
+    flex-direction: column;
     align-items: center;
     gap: var(--spacing-sm);
     width: 100%;
@@ -621,7 +620,7 @@ textarea:focus {
 
 .confidence-bar {
     width: 100%;
-    height: 16px; /* Slightly thicker for better visibility */
+    height: 16px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-full);
@@ -631,7 +630,6 @@ textarea:focus {
 
 .confidence-fill {
     height: 100%;
-    /* Use your root variables for consistency */
     background: linear-gradient(90deg, 
         var(--accent-purple) 0%, 
         var(--accent-cyan) 50%, 
@@ -640,11 +638,9 @@ textarea:focus {
     background-size: 200% 100%;
     border-radius: var(--radius-full);
     
-    /* The Fix: Ensures the width transition is visible on load */
-    width: 0; /* Initial state for JS animation if used, otherwise Jinja overrides */
+    width: 0;
     transition: width 1.5s cubic-bezier(0.17, 0.67, 0.83, 0.67); 
     
-    /* Adding a glowing pulse effect */
     box-shadow: 0 0 15px var(--accent-cyan);
     animation: shimmer 2s infinite alternate, moveGradient 3s linear infinite;
 }
@@ -661,8 +657,9 @@ textarea:focus {
     background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 5px rgba(6, 182, 212, 0.3));
+    filter: drop-shadow(0 0 5px rgba(34, 211, 238, 0.3));
 }
+
 /* ============================================
    ABOUT PAGE STYLES
    ============================================ */
@@ -685,7 +682,7 @@ textarea:focus {
 }
 
 .about-item:hover {
-    background: rgba(139, 92, 246, 0.1);
+    background: rgba(168, 85, 247, 0.1);
     border-color: var(--accent-purple);
     transform: translateX(10px);
 }
@@ -731,7 +728,7 @@ textarea:focus {
 }
 
 .error-message {
-    background: rgba(239, 68, 68, 0.2);
+    background: rgba(248, 113, 113, 0.2);
     border: 1px solid rgba(239, 68, 68, 0.5);
     border-radius: var(--radius-md);
     padding: var(--spacing-md);
