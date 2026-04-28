@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: sentiment-app
-        image: rajrishidockerhub/sentiment-app:build-2
+        image: rajrishidockerhub/sentiment-app:build-3
         ports:
         - containerPort: 5000
         env:
