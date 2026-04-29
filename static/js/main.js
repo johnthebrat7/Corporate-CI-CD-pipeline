@@ -1,16 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // Card animation (smoother)
+    // Card animation (gentler fade and smaller travel distance)
     const cards = document.querySelectorAll('.card');
     cards.forEach((card, index) => {
         card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
+        card.style.transform = 'translateY(10px)'; // Reduced from 20px
 
         setTimeout(() => {
-            card.style.transition = 'all 0.5s ease';
+            card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
             card.style.opacity = '1';
             card.style.transform = 'translateY(0)';
-        }, 100 + (index * 120));
+        }, 50 + (index * 80)); // Slightly faster stagger
     });
 
     // Confidence animation
@@ -21,18 +21,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
         setTimeout(() => {
             confidenceFill.style.width = width;
-        }, 400);
+        }, 300);
     }
 
-    // Mouse parallax (smoother)
+    // Mouse parallax (significantly smoothed and reduced intensity)
     document.addEventListener('mousemove', function(e) {
         const shapes = document.querySelectorAll('.shape');
-        const x = (e.clientX / window.innerWidth - 0.5) * 20;
-        const y = (e.clientY / window.innerHeight - 0.5) * 20;
+        // Reduced the multiplier from 20 to 5 for a very subtle, mild effect
+        const x = (e.clientX / window.innerWidth - 0.5) * 5; 
+        const y = (e.clientY / window.innerHeight - 0.5) * 5;
 
         shapes.forEach((shape, index) => {
-            const depth = (index + 1) * 0.5;
+            const depth = (index + 1) * 0.3;
             shape.style.transform = `translate(${x * depth}px, ${y * depth}px)`;
+            shape.style.transition = 'transform 0.1s linear'; // Added to smooth the mouse tracking
         });
     });
 
@@ -42,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             alert.style.transition = 'all 0.4s ease';
             alert.style.opacity = '0';
-            alert.style.transform = 'translateY(-10px)';
+            alert.style.transform = 'translateY(-5px)'; // Subtler exit
             setTimeout(() => alert.remove(), 400);
         }, 4500);
     });
