@@ -4,6 +4,13 @@ A production-grade CI/CD pipeline built using **Jenkins, Docker, Kubernetes (EKS
 
 ---
 
+## Demo Video
+
+
+https://drive.google.com/file/d/1ZCIQWqC0ArT1RSTtNOzafZmhJm35sA3L/view?usp=drive_link
+
+---
+
 ## 📌 Project Overview
 
 This project demonstrates an end-to-end DevOps pipeline:
@@ -186,7 +193,4 @@ Final Year Engineering Project
 
 <img width="940" height="473" alt="image" src="https://github.com/user-attachments/assets/e01e1e6a-165b-428d-82cd-2694e37f755e" />
 
-## Demo Video
 
-
-https://drive.google.com/file/d/1ZCIQWqC0ArT1RSTtNOzafZmhJm35sA3L/view?usp=drive_link
